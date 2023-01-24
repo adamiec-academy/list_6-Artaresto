@@ -19,4 +19,6 @@ def generate_assignments(previous_assignments, coders):
                     break
             else:
                 shuffle(my_list)
+
+
     return new_ass
