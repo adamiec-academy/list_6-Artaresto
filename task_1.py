@@ -1,17 +1,20 @@
-def generate_assingments(previous_assingments, coders):
+def generate_assignments(previous_assignments, coders):
     
     my_list = coders.copy()
-    new_ass = previous_assingments.copy()
+    new_ass = {}
     shuffle(my_list)
     
-    for key, value in previous_assingments.items():
+    for key, value in previous_assignments.items():
         while True:
-            if previous_assingments[key] != my_list[0] and previous_assingments[value] != my_list[0] and new_ass.items() != dict(map(reversed, new_ass.items())):   
-                new_ass[key] = my_list[0]
-                my_list.pop(0)
-                break
+            if key != my_list[0] and value != my_list[0]:
+                for k, v in new_ass.items():
+                    if k == my_list[0] and v == key:
+                        break
+                else:
+                    new_ass[key] = my_list[0]
+                    my_list.remove(my_list[0])
+        
+                    break
             else:
                 shuffle(my_list)
-
-
     return new_ass
