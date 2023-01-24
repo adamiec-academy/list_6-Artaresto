@@ -1,3 +1,5 @@
+from random import shuffle
+
 def generate_assignments(previous_assignments, coders):
     
     my_list = coders.copy()
