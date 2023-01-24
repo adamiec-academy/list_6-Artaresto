@@ -14,5 +14,4 @@ def generate_assingments(previous_assingments, coders):
                 shuffle(my_list)
 
     return new_ass
-generate_assingments(prev, pop)
     
