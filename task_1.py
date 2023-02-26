@@ -42,5 +42,4 @@ def generate_assignments(previous_assignments, coders):
             new_assignments[coders[i]] = shuffled_coders[i]
 
         if are_assignments_correct(previous_assignments, new_assignments):
-            print(new_assignments)
-
+            return new_assignments
