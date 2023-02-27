@@ -10,7 +10,7 @@ def is_self_review(new_assignments):
 
 
 def is_symetric_review(new_assignments):
-    for key in new_assignments.items():
+    for key in new_assignments:
         if key == new_assignments[new_assignments[key]]:
             return True
     return False
@@ -32,7 +32,19 @@ def are_assignments_correct(previous_assignments, new_assignments):
 
 
 def generate_assignments(previous_assignments, coders):
+
     shuffled_coders = copy(coders)
+
+    while True:
+        shuffle(shuffled_coders)
+        new_assignments = {}
+
+        for i in range(len(coders)):
+            new_assignments[coders[i]] = shuffled_coders[i]
+
+        if are_assignments_correct(previous_assignments, new_assignments):
+           return new_assignments
+
 
     while True:
         shuffle(shuffled_coders)
